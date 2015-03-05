@@ -19,7 +19,7 @@
 $aModule = array(
     'id'           => 'asy_b2b',
     'title'        => '<img src="../modules/asy/module_logo.png" alt="Alpha-Sys" title="Alpha-Sys"> B2B Erweiterungen (Netto-Preise, etc.)',
-    'description'  => 'Diese Modul erweitert um wesentliche B2B Features wie die Anzeige von Netto-Preisen.',
+    'description'  => 'Diese Modul erweitert Ihren Shop um wesentliche B2B Features wie die Anzeige von Netto-Preisen.',
     'thumbnail'    => 'module_logo.png',
     'version'      => '1.0',
     'author'       => 'Alpha-Sys',
