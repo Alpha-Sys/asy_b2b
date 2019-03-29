@@ -7,12 +7,14 @@
  *
  * @link        http://www.alpha-sys.de
  * @author      Fabian Kunkler <fabian.kunkler@alpha-sys.de>   
- * @copyright   (C) Alpha-Sys 2008-2015
+ * @copyright   (C) Alpha-Sys 2008-2019
  * @module      asy_b2b
- * @version     10.02.2015  1.0
+ * @version     29.03.2019 2.0.0
  */
+ 
+namespace AlphaSys\AsyB2B\Core;
 
-class asy_b2b__oxconfig extends asy_b2b__oxconfig_parent {
+class Config extends Config_parent {
 
     /**
      * Returns config parameter value if such parameter exists.
