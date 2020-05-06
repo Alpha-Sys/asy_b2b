@@ -44,9 +44,16 @@ class Config extends Config_parent {
      */
     public function showNetPrice(){
         $oUser = $this->getUser();
-        // user is a dealer
-        if($oUser && $oUser->inGroup('oxiddealer')){
-            return true;
+
+        // check if user is in any of the configured groups
+        $groups = $this->getShopConfVar('aB2BCustomerGroups', null, 'module:asy_b2b');
+
+        if($oUser){
+            foreach($groups as $group){
+                if($oUser->inGroup('oxiddealer')){
+                    return true;
+                }
+            }
         }
     }
 }

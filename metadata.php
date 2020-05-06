@@ -32,5 +32,6 @@ $aModule = array(
     'blocks' => array(
     ),
     'settings' => array(
+        array('group' => 'asy_b2b_main', 'name' => 'aB2BCustomerGroups', 'type' => 'arr',   'value' => array('oxiddealer') ),
     )
 );
