@@ -21,12 +21,13 @@ class Config extends Config_parent {
      * Manipulates config param blShowNetPrice if user is a dealer
      *
      * @param string $sName config parameter name
+     * @param string $default default value
      *
      * @return mixed
      */
-    public function getConfigParam($sName)
+    public function getConfigParam($sName, $default = null)
     {
-        $ret = parent::getConfigParam($sName);
+        $ret = parent::getConfigParam($sName, $default);
         
         //if b2b config param
         if($sName == "blShowNetPrice"){
@@ -44,9 +45,16 @@ class Config extends Config_parent {
      */
     public function showNetPrice(){
         $oUser = $this->getUser();
-        // user is a dealer
-        if($oUser && $oUser->inGroup('oxiddealer')){
-            return true;
+
+        // check if user is in any of the configured groups
+        $groups = $this->getShopConfVar('aB2BCustomerGroups', null, 'module:asy_b2b');
+
+        if($oUser){
+            foreach($groups as $group){
+                if($oUser->inGroup('oxiddealer')){
+                    return true;
+                }
+            }
         }
     }
 }
