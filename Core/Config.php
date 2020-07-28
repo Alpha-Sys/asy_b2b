@@ -21,12 +21,13 @@ class Config extends Config_parent {
      * Manipulates config param blShowNetPrice if user is a dealer
      *
      * @param string $sName config parameter name
+     * @param string $default default value
      *
      * @return mixed
      */
-    public function getConfigParam($sName)
+    public function getConfigParam($sName, $default = null)
     {
-        $ret = parent::getConfigParam($sName);
+        $ret = parent::getConfigParam($sName, $default);
         
         //if b2b config param
         if($sName == "blShowNetPrice"){
